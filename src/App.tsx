@@ -1,5 +1,6 @@
 import Input from "./components/Input";
 import MyList from "./components/MyList";
+import Trainer from "./components/Trainer";
 
 function App() {
 
@@ -26,6 +27,16 @@ function App() {
         <MyList />
       </section>
 
+      <section>
+        <h2>Props</h2>
+        <Trainer name="JH" age={32} specialty="Java" />
+        <Trainer name="CG" age={33} specialty="WEB" />
+        <Trainer name="MS" age={45} specialty="ORACLE" />
+        {
+          Trainer({name: "MS", age: 45, specialty: "ORACLE"})
+        }
+
+      </section>
 
     </>
   )
