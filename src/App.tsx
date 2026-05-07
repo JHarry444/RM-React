@@ -2,6 +2,9 @@ import Conditional from "./components/Conditional";
 import Input from "./components/Input";
 import MyList from "./components/MyList";
 import Trainer from "./components/Trainer";
+import trainers from "./data/trainers.json";
+import { v4 as uuidv4 } from "uuid";
+
 
 function App() {
 
@@ -43,9 +46,17 @@ function App() {
         <Conditional bool={true} />
         <Conditional bool={false} />
       </section>
-
+      <section>
+        <h2>External Data</h2>
+        {
+          // In a real application, you would fetch this data from an API
+          // and store it in state using useState and useEffect hooks
+          trainers.map(trainer => (
+            <Trainer key={uuidv4()} name={trainer.name} age={trainer.age} specialty={trainer.specialty} />
+          ))
+        }
+      </section>
     </>
-  )
-}
+  );}
 
 export default App
