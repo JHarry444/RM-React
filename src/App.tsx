@@ -1,62 +1,31 @@
-import Conditional from "./components/Conditional";
-import Input from "./components/Input";
-import MyList from "./components/MyList";
-import Trainer from "./components/Trainer";
-import trainers from "./data/trainers.json";
-import { v4 as uuidv4 } from "uuid";
-
+import { Route, BrowserRouter as Router, Routes } from "react-router";
+import ConditionalDemo from "./components/ConditionalDemo";
+import Components from "./components/Components";
+import Props from "./components/Props";
+import External from "./components/External";
+import Navbar from "./components/NavBar";
 
 function App() {
 
-  function add(a: number, b: number) {
-    return a + b;
-  }
 
 
   return (
     // <> is a React Fragment, it allows us to return multiple 
     // elements without adding an extra node to the DOM
-    <>
-      {/* In JSX/TSX you can embed expressions using curly braces */}
-      <p>{`2 + 3 = ${add(2, 3)}`}</p>
-      <p>{`3 + 2 = ${add(3, 2)}`}</p>
-      <p>{`4 + 1 = ${add(4, 1)}`}</p>
-      <p>1 + 1</p>
-      <p>{1 + 1}</p>
+    <Router>
+      <Navbar/>
+      <Routes>
+        {/* if (url === '/demo') return (<p>This is a demo page</p>); */}
+        <Route path="/demo" element={<p>This is a demo page</p>} />
+        <Route path="/" element={<h1>HOME</h1>} />
+        <Route path="/components" element={<Components />} />
+        <Route path="/conditional" element={<ConditionalDemo />} />
+        <Route path="/props" element={<Props />} />
+        <Route path="/external" element={<External />} />
+      </Routes>
 
-      <section>
-        <h2>Custom components</h2>
-        <input type="text" />
-        <Input />
-        <MyList />
-      </section>
-
-      <section>
-        <h2>Props</h2>
-        <Trainer name="JH" age={32} specialty="Java" />
-        <Trainer name="CG" age={33} specialty="WEB" />
-        <Trainer name="MS" age={45} specialty="ORACLE" />
-        {
-          Trainer({ name: "MS", age: 45, specialty: "ORACLE" })
-        }
-        <Trainer name="PB" age={28} />
-      </section>
-      <section>
-        <h2>Conditional Rendering</h2>
-        <Conditional bool={true} />
-        <Conditional bool={false} />
-      </section>
-      <section>
-        <h2>External Data</h2>
-        {
-          // In a real application, you would fetch this data from an API
-          // and store it in state using useState and useEffect hooks
-          trainers.map(trainer => (
-            <Trainer key={uuidv4()} name={trainer.name} age={trainer.age} specialty={trainer.specialty} />
-          ))
-        }
-      </section>
-    </>
-  );}
+    </Router>
+  );
+}
 
 export default App
