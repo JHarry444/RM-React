@@ -1,3 +1,4 @@
+import Conditional from "./components/Conditional";
 import Input from "./components/Input";
 import MyList from "./components/MyList";
 import Trainer from "./components/Trainer";
@@ -33,9 +34,14 @@ function App() {
         <Trainer name="CG" age={33} specialty="WEB" />
         <Trainer name="MS" age={45} specialty="ORACLE" />
         {
-          Trainer({name: "MS", age: 45, specialty: "ORACLE"})
+          Trainer({ name: "MS", age: 45, specialty: "ORACLE" })
         }
-
+        <Trainer name="PB" age={28} />
+      </section>
+      <section>
+        <h2>Conditional Rendering</h2>
+        <Conditional bool={true} />
+        <Conditional bool={false} />
       </section>
 
     </>

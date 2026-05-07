@@ -1,18 +1,18 @@
 type TrainerProps = {
     name: string;
     age: number;
-    specialty: string;
+    specialty?: string;
 }
 
-function Trainer({name, age, specialty}: TrainerProps) {
- 
-    return ( 
+function Trainer({ name, age, specialty }: TrainerProps) {
+
+    return (
         <>
             <p>Name: {name}</p>
             <p>Age: {age}</p>
-            <p>Specialty: {specialty}</p>
+            {specialty && <p>Specialty: {specialty}</p>}
         </>
-     );
+    );
 }
 
 export default Trainer;
