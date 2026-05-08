@@ -4,6 +4,7 @@ import Components from "./components/Components";
 import Props from "./components/Props";
 import External from "./components/External";
 import Navbar from "./components/NavBar";
+import EventHandling from "./components/EventHandling";
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
         <Route path="/conditional" element={<ConditionalDemo />} />
         <Route path="/props" element={<Props />} />
         <Route path="/external" element={<External />} />
+        <Route path="/events" element={<EventHandling />} />
       </Routes>
 
     </Router>

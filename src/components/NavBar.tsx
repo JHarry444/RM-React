@@ -9,6 +9,7 @@ function Navbar() {
             <Link to="/conditional">Conditional</Link>
             <Link to="/props">Props</Link>
             <Link to="/external">External</Link>
+            <Link to="/events">Events</Link>    
         </nav>
     );
 }
