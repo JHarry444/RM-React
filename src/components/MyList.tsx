@@ -1,9 +1,11 @@
-function MyList() {
+import { useContext } from "react";
+import { ThemeContext } from "../context/ThemeContext";
+
+function MyList({ children }: { children: React.ReactNode }) {
+    const {theme} = useContext(ThemeContext);
     return (
-        <ul>
-            <li>Eggs</li>
-            <li>Milk</li>
-            <li>Ham</li>
+        <ul className={`myList-${theme}`}>
+            {children}
         </ul>
     );
 }

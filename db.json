@@ -35,6 +35,18 @@
       "specialty": "devops",
       "name": "lb",
       "id": "dfgdfgdfgdfg"
+    },
+    {
+      "age": 34,
+      "specialty": "speed",
+      "name": "barry",
+      "id": "HsPRBfNtlG8"
+    },
+    {
+      "age": 0,
+      "specialty": "allen",
+      "name": "tim",
+      "id": "meep"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

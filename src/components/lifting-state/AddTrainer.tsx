@@ -4,8 +4,8 @@ import type { TrainerType } from "./Trainers";
 function AddTrainer({ setTrainers }: { setTrainers: React.Dispatch<React.SetStateAction<TrainerType[]>> }) {
     const [data, setData] = useState<TrainerType>({ name: "", age: 0, specialty: "" });
 
-    const handleSubmit = (e: React.SubmitEvent<HTMLFormElement>) => {
-        e.preventDefault();
+    const handleSubmit = (event: React.SubmitEvent<HTMLFormElement>) => {
+        event.preventDefault();
         setTrainers(prev => [...prev, data]);
 
         fetch("http://localhost:8080/trainers", {
@@ -13,7 +13,7 @@ function AddTrainer({ setTrainers }: { setTrainers: React.Dispatch<React.SetStat
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify({...data, id: "meep"})
         }).then(res => {
             if (!res.ok) {
                 throw new Error("Network response was not ok");
