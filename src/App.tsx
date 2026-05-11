@@ -6,6 +6,7 @@ import External from "./components/External";
 import Navbar from "./components/NavBar";
 import EventHandling from "./components/EventHandling";
 import StateExample from "./components/StateExample";
+import Trainers from "./components/lifting-state/Trainers";
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
         <Route path="/external" element={<External />} />
         <Route path="/events" element={<EventHandling />} />
         <Route path="/state" element={<StateExample />} />
+        <Route path="/lifting" element={<Trainers />} />
       </Routes>
       <footer>{new Date().toISOString()}</footer>
     </Router>

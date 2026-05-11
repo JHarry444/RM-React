@@ -1,0 +1,15 @@
+#trainerContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#trainerContainer form {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    justify-items: start;
+    max-width: 200px;
+}
+
+#trainerContainer form>input {
+    width: 100%;
+}

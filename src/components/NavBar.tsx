@@ -11,6 +11,7 @@ function Navbar() {
             <Link to="/external">External</Link>
             <Link to="/events">Events</Link>
             <Link to="/state">State</Link>
+            <Link to="/lifting">Inverse Data Flow</Link>
         </nav>
     );
 }
