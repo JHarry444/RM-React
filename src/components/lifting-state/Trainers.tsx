@@ -13,21 +13,31 @@ export type TrainerType = {
 function Trainers() {
     const [trainers, setTrainers] = useState<TrainerType[]>([]);
 
+    async function fetchTrainers() {
+        try {
+            const res = await fetch("http://localhost:8080/trainers");
+            const data = await res.json();
+            setTrainers(data);
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+
 
     // will only get called when the component is mounted, so it will only fetch the trainers once
     // mounted -> initial render
     useEffect(() => {
-        async function fetchTrainers() {
-            try {
-                const res = await fetch("http://localhost:8080/trainers");
-                const data = await res.json();
-                setTrainers(data);
-            } catch (error) {
-                console.error(error);
-            }
-        }
-        fetchTrainers();
+        const trainerInterval = setInterval(fetchTrainers, 3_000);
+
+        // cleanup function to clear the interval when the component is unmounted
+        // unmounted -> component is removed from the DOM
+        // this is important to prevent memory leaks and unnecessary API calls when the component is no longer in use
+   
+        return () => clearInterval(trainerInterval);
     }, []);
+
+
 
     return (
         <>

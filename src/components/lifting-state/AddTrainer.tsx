@@ -7,8 +7,22 @@ function AddTrainer({ setTrainers }: { setTrainers: React.Dispatch<React.SetStat
     const handleSubmit = (e: React.SubmitEvent<HTMLFormElement>) => {
         e.preventDefault();
         setTrainers(prev => [...prev, data]);
-        setData({ name: "", age: 0, specialty: "" });
-        nameRef.current?.focus();
+
+        fetch("http://localhost:8080/trainers", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        }).then(res => {
+            if (!res.ok) {
+                throw new Error("Network response was not ok");
+            }
+
+            setData({ name: "", age: 0, specialty: "" });
+            nameRef.current?.focus();
+        }).catch(error => console.error(error));
+
     }
 
     const nameRef = React.useRef<HTMLInputElement>(null);

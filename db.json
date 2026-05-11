@@ -1,24 +1,41 @@
 {
-    "trainers": [
+  "trainers": [
     {
-        "name": "JH",
-        "age": 32,
-        "specialty": "Java"
+      "name": "JH",
+      "age": 32,
+      "specialty": "Java",
+      "id": "Xbq0XPu0M-M"
     },
     {
-        "name": "CG",
-        "age": 33,
-        "specialty": "Web"
+      "name": "CG",
+      "age": 33,
+      "specialty": "Web",
+      "id": "YBoq0ImGy5Y"
     },
     {
-        "name": "MS",
-        "age": 45,
-        "specialty": "Oracle"
+      "name": "MS",
+      "age": 45,
+      "specialty": "Oracle",
+      "id": "6fruIdWOp4U"
     },
     {
-        "name": "JB",
-        "age": 27,
-        "specialty": "ServiceNow"
+      "name": "JB",
+      "age": 27,
+      "specialty": "ServiceNow",
+      "id": "BTWdvunQrd8"
+    },
+    {
+      "age": 28,
+      "specialty": "devops",
+      "name": "pb",
+      "id": "bzuiE7tOmsQ"
+    },
+    {
+      "age": 22,
+      "specialty": "devops",
+      "name": "lb",
+      "id": "dfgdfgdfgdfg"
     }
-]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
