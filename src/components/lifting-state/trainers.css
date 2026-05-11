@@ -4,12 +4,25 @@
 }
 
 #trainerContainer form {
+    margin: auto;
     display: grid;
     grid-template-columns: 1fr 2fr;
     justify-items: start;
-    max-width: 200px;
+    max-width: 250px;
+    gap: 5px;
 }
 
 #trainerContainer form>input {
-    width: 100%;
+    width: 95%;
+}
+
+#trainerContainer form>button {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    justify-self: end;
+}
+
+#trainersList {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
 }

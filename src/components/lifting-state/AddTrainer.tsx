@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import type { TrainerType } from "./Trainers";
 
 function AddTrainer({ setTrainers }: { setTrainers: React.Dispatch<React.SetStateAction<TrainerType[]>> }) {
@@ -8,7 +8,10 @@ function AddTrainer({ setTrainers }: { setTrainers: React.Dispatch<React.SetStat
         e.preventDefault();
         setTrainers(prev => [...prev, data]);
         setData({ name: "", age: 0, specialty: "" });
+        nameRef.current?.focus();
     }
+
+    const nameRef = React.useRef<HTMLInputElement>(null);
 
     return (
         <div>
@@ -16,12 +19,15 @@ function AddTrainer({ setTrainers }: { setTrainers: React.Dispatch<React.SetStat
             <form onSubmit={handleSubmit}>
                 <label htmlFor="addTrainerName">Name:</label>
                 <input
+                    ref={nameRef}
                     type="text"
                     id="addTrainerName"
                     name="name"
                     value={data.name}
                     onChange={e => setData({ age: data.age, specialty: data.specialty, name: e.target.value })}
                     required
+
+                    autoFocus
                 />
                 <label htmlFor="addTrainerAge">Age:</label>
                 <input

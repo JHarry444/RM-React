@@ -14,12 +14,16 @@ function Trainers() {
     const [trainers, setTrainers] = useState<TrainerType[]>([]);
 
 
-    return ( 
-        <div id="trainerContainer">
-            <AddTrainer setTrainers={setTrainers}/>
-            <ListTrainers trainers={trainers}/>
-        </div>
-     );
+    return (
+        <>
+            <h1>Inverse Data Flow</h1>
+            <div id="trainerContainer">
+                <AddTrainer setTrainers={setTrainers} />
+                <ListTrainers trainers={trainers} />
+            </div>
+        </>
+
+    );
 }
 
 export default Trainers;
