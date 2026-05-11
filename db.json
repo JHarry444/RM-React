@@ -1,0 +1,24 @@
+{
+    "trainers": [
+    {
+        "name": "JH",
+        "age": 32,
+        "specialty": "Java"
+    },
+    {
+        "name": "CG",
+        "age": 33,
+        "specialty": "Web"
+    },
+    {
+        "name": "MS",
+        "age": 45,
+        "specialty": "Oracle"
+    },
+    {
+        "name": "JB",
+        "age": 27,
+        "specialty": "ServiceNow"
+    }
+]
+}
